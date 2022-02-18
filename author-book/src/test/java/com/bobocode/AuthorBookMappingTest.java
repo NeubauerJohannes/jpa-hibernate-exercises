@@ -9,15 +9,12 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.JoinTable;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
-import javax.persistence.RollbackException;
+import javax.persistence.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -66,6 +63,12 @@ class AuthorBookMappingTest {
         Book book = createRandomBook();
         book.setName(null);
         try {
+            emUtil.performWithinTx(new Consumer<EntityManager>() {
+                @Override
+                public void accept(EntityManager entityManager) {
+
+                }
+            });
             emUtil.performWithinTx(entityManager -> entityManager.persist(book));
             fail("Exception should be thrown");
         } catch (Exception e) {

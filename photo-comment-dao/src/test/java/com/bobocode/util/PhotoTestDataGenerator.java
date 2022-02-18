@@ -31,5 +31,11 @@ public class PhotoTestDataGenerator {
     public static List<PhotoComment> createListOfRandomComments(int size) {
         return Stream.generate(PhotoTestDataGenerator::createRandomPhotoComment).limit(size).collect(toList());
     }
+    public static Photo createRandomPhoto(String description){
+        Photo photo = new Photo();
+        photo.setUrl(RandomStringUtils.randomAlphabetic(30));
+        photo.setDescription(description);
+        return photo;
+    }
 }
 

@@ -46,4 +46,6 @@ public interface PhotoDao {
      * @param comment
      */
     void addComment(long photoId, String comment);
+
+    List<Photo> findByDescription(String description);
 }

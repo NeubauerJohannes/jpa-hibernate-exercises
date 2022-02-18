@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.bobocode.util.PhotoTestDataGenerator.createListOfRandomPhotos;
@@ -87,5 +88,21 @@ public class PhotoDaoTest {
             assertThat(managedPhoto.getComments(),
                     hasItem(hasProperty("text", equalTo("Nice picture!"))));
         });
+    }
+
+    @Test
+    public void testGetPhotoByDescription(){
+        Photo photo = createRandomPhoto("test");
+        Photo photo2 = createRandomPhoto("test");
+        List<Photo> photoList = createListOfRandomPhotos(20);
+        photoList.add(photo);
+        photoList.add(photo2);
+        emUtil.performWithinTx(entityManager -> photoList.forEach(entityManager::persist));
+        List<Photo> foundPhotos = photoDao.findByDescription("test");
+
+        assertThat(foundPhotos, containsInAnyOrder(photo, photo2));
+
+
+
     }
 }
