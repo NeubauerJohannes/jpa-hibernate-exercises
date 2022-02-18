@@ -8,7 +8,7 @@ The list of exercises dedicated to training your JPA and Hibernate ORM skills
 Working on real problems, you're focused on finding a solution. Learning new things, you're trying to understand how it works.
 It is important to have a different type of activities, which purpose is improving your skill 
 
-***An exercise** is a predefined task that you continuously implement to improve a certain skill* :muscle:
+***exercises** are a predefined task that you continuously implement to improve a certain skill* :muscle:
 ##
 * [Hello persistence.xml](https://github.com/bobocode-projects/jpa-hibernate-exercises/tree/master/hello-persistence-xml)
 * [Hello JPA entity](https://github.com/bobocode-projects/jpa-hibernate-exercises/tree/master/hello-jpa-entity)
@@ -18,3 +18,5 @@ It is important to have a different type of activities, which purpose is improvi
 * [Photo comment DAO](https://github.com/bobocode-projects/jpa-hibernate-exercises/tree/master/photo-comment-dao)
 * [Authors & Books](https://github.com/bobocode-projects/jpa-hibernate-exercises/tree/master/author-book)
 * [Company products](https://github.com/bobocode-projects/jpa-hibernate-exercises/tree/master/company-products)
+
+Thanks to bobocode projects
